@@ -1,0 +1,22 @@
+version '3'
+services:
+  movies:
+    image: vijaygiduthuri/phonepaymovies:v1
+    ports:
+      - "8000:80"
+    deploy:
+      replicas: 4
+
+  train:
+     image: vijaygiduthuri/phonepaytrain:v1
+     ports:
+       - "8001:80"
+     deploy:
+       replicas: 4
+
+  recharge:
+    image: vijaygiduthuri/phonepayrecharge:v1
+    ports:
+      - "8002:80"
+    deploy:
+      replicas: 4
